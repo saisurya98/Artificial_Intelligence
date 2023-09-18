@@ -1,0 +1,72 @@
+Assignment 3
+Bayesian Networks
+Max possible score:
+4308: 75 Points [+25 Points EC]
+5360: 75 Points [+25 Points EC]
+Task 1
+Max: [4308: 50 Points, 5360: 50 Points]
+Consider the following Bayesian Network
+
+BayesianNetwork from Quiz4 Prep material
+Image 1: A Bayesian Network
+
+The Variables used here are as followes
+B : True if there is a Baseball Game on TV, False if not
+G: True if George watches TV, False if not
+C: True if George is out of Cat Food, False if not
+F: True if George feeds his cat, False if not.
+Let us say you are given some Training Data which represents what happens over a period of time (For example: This file contains what happens every evening over one specific year). Your Task is to learn the conditonal probabilty tables for the bayesian network from the training data. The training data will be formatted as follows:
+The first number is 0 if there is no baseball game on TV (B is false), and 1 if there is a baseball game on TV (B is true).
+The second number is 0 if George does not watch TV (G is false), and 1 if George watches TV (G is true).
+The third number is 0 if George is not out of cat food (C is false), and 1 if George is out of cat food (C is true).
+The fourth number is 0 if George does not feed the cat (F is false), and 1 if George feeds the cat (F is true).
+Your program should be called bnet and the command line invocation should follow the following format:
+
+bnet.py <training_data>
+<training_data> text file with training data.
+You can display the calculated probabilty values in standard output.
+
+Task 2
+Max: [4308: 25 Points, 5360: 25 Points]
+Add functionality to the code for Task 1 to also be able to calculate any value in the JPD for this domain using the conditional probabilty distributions calculated in Task 1. [Note: Correct implementation of this section will also give credit for Task 1]
+
+Your program's command line invocation will be changed to:
+
+bnet.py <training_data> <Bt/Bf> <Gt/Gf> <Ct/Cf> <Ft/Ff>
+<training_data> text file with training data.
+Bt if B is true, Bf if B is false
+Gt if G is true, Gf if G is false
+Ct if C is true, Cf if C is false
+Ft if F is true, Ff if F is false
+Sample Invocation: bnet.py training_data.txt Bt Gf Ct Ff  Train the Bayesian Network and use it to calculate P(B=t, G=f, C=t, F=f)
+
+You can display the calculated probabilty values in standard output.
+
+Task 3 [Optional Extra Credit]
+Max: [4308: 25 Points, 5360: 25 Points]
+Add functionality to the code for Task 2 to also be able to calculate the probabilty for any event given evidence (if available) using inference by enumeration. [Note: Correct implementation of this section will also give credit for Task 1 and 2]
+
+Your program's command line invocation will be changed to:
+
+bnet.py <training_data> <query variable values> [given <evidence variable values>]
+<training_data> text file with training data.
+Values of Query Variable [Format is same as in Task 2]
+Values of Evidence Variable (if any) [Format is same as in Task 2]
+Sample Invocations:
+bnet.py training_data.txt Bt Gf given Ff  Train the Bayesian Network and use it to calculate P(B=t, G=f | F=f)
+bnet.py training_data.txt Bt Ff  Train the Bayesian Network and use it to calculate P(B=t, F=f)
+You can display the calculated probabilty values in standard output.
+
+How to submit
+Implementations in C, C++, Java, and Python will be accepted. Points will be taken off for failure to comply with this requirement unless previously cleared with the Instructor.
+
+Create a ZIPPED directory called <net-id>_assmt2.zip (no other forms of compression accepted, contact the instructor or TA if you do not know how to produce .zip files).
+The directory should contain the source code for the task (no need for any compiled binaries). Each folder should also contain a file called readme.txt, which should specify precisely:
+Name and UTA ID of the student.
+What programming language is used for this task. (Make sure to also give version and subversion numbers)
+How the code is structured.
+How to run the code, including very specific compilation instructions, if compilation is needed. Instructions such as "compile using g++" are NOT considered specific if the TA needs to do additional steps to get your code to run.
+If your code will run on the ACS Omega (not required) make a note of it in the readme file.
+Insufficient or unclear instructions will be penalized.
+Code that the TA cannot run gets AT MOST 75% credit (depending on if the student is able to get it to run during a Demo session).
+
